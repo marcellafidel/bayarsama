@@ -1,3 +1,5 @@
+import { ClipboardList } from "lucide-react"
+
 function HasilPembagian({ teman, nota }) {
   const subtotalMenu = teman.reduce((acc, t) => {
     return acc + t.pesanan.reduce((a, p) => a + p.harga * p.qty, 0)
@@ -20,15 +22,15 @@ function HasilPembagian({ teman, nota }) {
   }
 
   function salinWhatsApp() {
-    let pesan = "🧾 *BayarSama - Rincian Tagihan*\n\n"
+    let pesan = "*BayarSama - Rincian Tagihan*\n\n"
     teman.forEach((t) => {
-      pesan += `👤 *${t.nama}* — ${formatRupiah(hitungTagihan(t))}\n`
+      pesan += `*${t.nama}* — ${formatRupiah(hitungTagihan(t))}\n`
       t.pesanan.forEach((p) => {
         pesan += `  • ${p.menu} (${p.qty}x) — ${formatRupiah(p.harga * p.qty)}\n`
       })
       pesan += "\n"
     })
-    pesan += `💰 *Total: ${formatRupiah(totalPembagian)}*`
+    pesan += `*Total: ${formatRupiah(totalPembagian)}*`
     navigator.clipboard.writeText(pesan)
     alert("Rincian berhasil disalin! Tinggal paste ke WhatsApp.")
   }
@@ -64,7 +66,8 @@ function HasilPembagian({ teman, nota }) {
       </div>
 
       <button onClick={salinWhatsApp} className="btn-whatsapp">
-        📋 Salin Rincian ke WhatsApp
+        <ClipboardList size={16} strokeWidth={2} />
+        Salin Rincian ke WhatsApp
       </button>
     </div>
   )

@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+:root {
+  --purple-900: #6B46A8;
+  --purple-700: #8B5FBF;
+  --purple-600: #9B72D9;
+  --purple-500: #A87AE0;
+  --purple-400: #C3A0EA;
+  --purple-300: #CBAAF0;
+  --purple-100: #EDE3FB;
+  --purple-50:  #F6F1FC;
+  --ink:        #3D3050;
+  --muted:      #8577A3;
+  --border:     #E4D4F7;
+  --emerald:    #10B981;
+  --emerald-bg: #ECFDF5;
+  --amber:      #EA580C;
+  --amber-bg:   #FFF4EC;
+  --rose:       #E11D74;
+  --rose-bg:    #FDF0F6;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,9 +27,10 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f0f4f8;
-  color: #1a1a1a;
+  font-family: 'Nunito', 'Segoe UI', sans-serif;
+  background: linear-gradient(180deg, #FAF7FE 0%, #F3EBFB 100%);
+  background-attachment: fixed;
+  color: var(--ink);
 }
 
 /* NAVBAR */
@@ -17,7 +40,7 @@ body {
   align-items: center;
   background: white;
   padding: 12px 24px;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -31,24 +54,28 @@ body {
 
 .brand-icon {
   font-size: 28px;
+  display: flex;
 }
 
 .navbar-brand h1 {
   font-size: 18px;
   font-weight: 700;
-  color: #2563eb;
+  color: var(--purple-500);
 }
 
 .navbar-brand small {
   font-size: 10px;
-  color: #94a3b8;
+  color: var(--muted);
   letter-spacing: 1px;
 }
 
 .btn-reset {
-  background: #fff0f0;
-  color: #ef4444;
-  border: 1px solid #fecaca;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--rose-bg);
+  color: var(--rose);
+  border: 1px solid #F7C7DF;
   padding: 8px 14px;
   border-radius: 8px;
   cursor: pointer;
@@ -56,7 +83,7 @@ body {
 }
 
 .btn-reset:hover {
-  background: #fee2e2;
+  background: #FBDCEB;
 }
 
 /* LAYOUT */
@@ -80,7 +107,8 @@ body {
   background: white;
   border-radius: 12px;
   padding: 20px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 2px rgba(124, 58, 237, 0.04);
 }
 
 .card-header {
@@ -97,7 +125,7 @@ body {
 }
 
 .step-number {
-  background: #2563eb;
+  background: linear-gradient(135deg, var(--purple-500), var(--purple-700));
   color: white;
   width: 24px;
   height: 24px;
@@ -111,8 +139,8 @@ body {
 }
 
 .badge {
-  background: #eff6ff;
-  color: #2563eb;
+  background: var(--purple-100);
+  color: var(--purple-700);
   padding: 4px 10px;
   border-radius: 20px;
   font-size: 12px;
@@ -120,8 +148,8 @@ body {
 }
 
 .badge-live {
-  background: #f0fdf4;
-  color: #16a34a;
+  background: var(--emerald-bg);
+  color: var(--emerald);
   padding: 4px 10px;
   border-radius: 20px;
   font-size: 11px;
@@ -144,20 +172,20 @@ body {
 .form-group label {
   font-size: 11px;
   font-weight: 600;
-  color: #64748b;
+  color: var(--muted);
   letter-spacing: 0.5px;
 }
 
 .form-group small {
   font-size: 11px;
-  color: #94a3b8;
+  color: var(--muted);
 }
 
 .input-prefix,
 .input-suffix {
   display: flex;
   align-items: center;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border);
   border-radius: 8px;
   overflow: hidden;
   background: white;
@@ -166,10 +194,10 @@ body {
 .input-prefix span,
 .input-suffix span {
   padding: 0 10px;
-  background: #f8fafc;
-  color: #64748b;
+  background: var(--purple-50);
+  color: var(--purple-700);
   font-size: 13px;
-  border-right: 1px solid #e2e8f0;
+  border-right: 1px solid var(--border);
   height: 100%;
   display: flex;
   align-items: center;
@@ -177,7 +205,7 @@ body {
 
 .input-suffix span {
   border-right: none;
-  border-left: 1px solid #e2e8f0;
+  border-left: 1px solid var(--border);
 }
 
 .input-prefix input,
@@ -199,18 +227,18 @@ body {
 .tambah-teman input {
   flex: 1;
   padding: 10px 14px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border);
   border-radius: 8px;
   font-size: 14px;
   outline: none;
 }
 
 .tambah-teman input:focus {
-  border-color: #2563eb;
+  border-color: var(--purple-500);
 }
 
 .btn-tambah {
-  background: #2563eb;
+  background: linear-gradient(135deg, var(--purple-500), var(--purple-700));
   color: white;
   border: none;
   padding: 10px 16px;
@@ -221,7 +249,7 @@ body {
 }
 
 .btn-tambah:hover {
-  background: #1d4ed8;
+  background: linear-gradient(135deg, var(--purple-600), var(--purple-900));
 }
 
 /* TEMAN GRID */
@@ -232,7 +260,7 @@ body {
 }
 
 .teman-card {
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 14px;
 }
@@ -254,7 +282,7 @@ body {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: #2563eb;
+  background: linear-gradient(135deg, var(--purple-400), var(--purple-700));
   color: white;
   display: flex;
   align-items: center;
@@ -265,22 +293,24 @@ body {
 }
 
 .btn-hapus {
+  display: inline-flex;
+  align-items: center;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: var(--muted);
   cursor: pointer;
   font-size: 14px;
   padding: 2px 6px;
 }
 
 .btn-hapus:hover {
-  color: #ef4444;
+  color: var(--rose);
 }
 
 .label-pesanan {
   font-size: 11px;
   font-weight: 600;
-  color: #64748b;
+  color: var(--muted);
   margin-bottom: 8px;
   letter-spacing: 0.5px;
 }
@@ -295,7 +325,7 @@ body {
 
 .pesanan-row input {
   padding: 7px 10px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border);
   border-radius: 6px;
   font-size: 13px;
   outline: none;
@@ -303,13 +333,13 @@ body {
 }
 
 .pesanan-row input:focus {
-  border-color: #2563eb;
+  border-color: var(--purple-500);
 }
 
 .btn-tambah-menu {
   background: none;
-  border: 1px dashed #cbd5e1;
-  color: #64748b;
+  border: 1px dashed var(--purple-300);
+  color: var(--muted);
   padding: 8px;
   border-radius: 6px;
   cursor: pointer;
@@ -319,9 +349,9 @@ body {
 }
 
 .btn-tambah-menu:hover {
-  background: #f8fafc;
-  border-color: #2563eb;
-  color: #2563eb;
+  background: var(--purple-50);
+  border-color: var(--purple-500);
+  color: var(--purple-700);
 }
 
 /* HASIL PEMBAGIAN */
@@ -331,7 +361,7 @@ body {
 }
 
 .hasil-teman {
-  border-bottom: 1px solid #f1f5f9;
+  border-bottom: 1px solid var(--purple-100);
   padding: 12px 0;
 }
 
@@ -351,14 +381,14 @@ body {
 .hasil-total {
   font-weight: 700;
   font-size: 14px;
-  color: #2563eb;
+  color: var(--purple-700);
 }
 
 .hasil-item {
   display: flex;
   justify-content: space-between;
   font-size: 13px;
-  color: #64748b;
+  color: var(--muted);
   padding: 2px 0 2px 40px;
 }
 
@@ -368,13 +398,17 @@ body {
   padding: 14px 0;
   font-weight: 700;
   font-size: 15px;
-  border-top: 2px solid #e2e8f0;
+  border-top: 2px solid var(--border);
   margin-top: 8px;
 }
 
 .btn-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   width: 100%;
-  background: #25d366;
+  background: var(--purple-500);
   color: white;
   border: none;
   padding: 14px;
@@ -386,7 +420,7 @@ body {
 }
 
 .btn-whatsapp:hover {
-  background: #1ebe5d;
+  background: var(--purple-700);
 }
 
 /* RESPONSIVE */
@@ -410,11 +444,11 @@ body {
 }
 
 .validasi-ok {
-  border-left: 4px solid #22c55e;
+  border-left: 4px solid var(--emerald);
 }
 
 .validasi-warn {
-  border-left: 4px solid #3b82f6;
+  border-left: 4px solid var(--amber);
 }
 
 .validasi-header {
@@ -429,16 +463,20 @@ body {
   font-weight: 600;
 }
 
+.validasi-icon {
+  display: flex;
+}
+
 .validasi-desc {
   font-size: 12px;
-  color: #64748b;
+  color: var(--muted);
   margin-bottom: 12px;
   line-height: 1.5;
 }
 
 .validasi-progress-bar {
   height: 6px;
-  background: #e2e8f0;
+  background: var(--purple-100);
   border-radius: 999px;
   overflow: hidden;
   margin-bottom: 10px;
@@ -454,22 +492,25 @@ body {
   display: flex;
   justify-content: space-between;
   font-size: 12px;
-  color: #64748b;
+  color: var(--muted);
   margin-bottom: 10px;
 }
 
 .validasi-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 13px;
   padding: 8px 12px;
   border-radius: 8px;
 }
 
 .validasi-status.ok {
-  background: #f0fdf4;
-  color: #16a34a;
+  background: var(--emerald-bg);
+  color: var(--emerald);
 }
 
 .validasi-status.warn {
-  background: #eff6ff;
-  color: #2563eb;
+  background: var(--amber-bg);
+  color: var(--amber);
 }

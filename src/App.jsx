@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { RotateCcw } from "lucide-react"
+import Logo from "./components/Logo"
 import DetailNota from "./components/DetailNota"
 import TemanList from "./components/TemanList"
 import HasilPembagian from "./components/HasilPembagian"
@@ -23,14 +25,17 @@ function App() {
     <div className="app">
       <header className="navbar">
         <div className="navbar-brand">
-          <span className="brand-icon">💳</span>
+          <span className="brand-icon">
+            <Logo size={40} />
+          </span>
           <div>
             <h1>BayarSama</h1>
             <small>SPLIT BILL SMART APP</small>
           </div>
         </div>
         <button onClick={resetData} className="btn-reset">
-          🔄 Reset Data
+          <RotateCcw size={16} strokeWidth={2} />
+          Reset Data
         </button>
       </header>
 
