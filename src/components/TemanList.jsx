@@ -46,6 +46,15 @@ function TemanList({ teman, setTeman }) {
     }))
   }
 
+  function updatePesananNumber(temanId, pesananId, field, rawValue) {
+    // Biarkan kosong dulu kalau user lagi hapus semua angka
+    if (rawValue === "") {
+      updatePesanan(temanId, pesananId, field, "")
+      return
+    }
+    updatePesanan(temanId, pesananId, field, Number(rawValue))
+  }
+
   function hapusPesanan(temanId, pesananId) {
     setTeman(teman.map((t) => {
       if (t.id !== temanId) return t
@@ -99,15 +108,15 @@ function TemanList({ teman, setTeman }) {
                 <input
                   type="number"
                   placeholder="Harga"
-                  value={p.harga}
-                  onChange={(e) => updatePesanan(t.id, p.id, "harga", Number(e.target.value))}
+                  value={p.harga === 0 ? "" : p.harga}
+                  onChange={(e) => updatePesananNumber(t.id, p.id, "harga", e.target.value)}
                 />
                 <input
                   type="number"
                   placeholder="Qty"
-                  value={p.qty}
+                  value={p.qty === 0 ? "" : p.qty}
                   min="1"
-                  onChange={(e) => updatePesanan(t.id, p.id, "qty", Number(e.target.value))}
+                  onChange={(e) => updatePesananNumber(t.id, p.id, "qty", e.target.value)}
                 />
                 <button onClick={() => hapusPesanan(t.id, p.id)} className="btn-hapus">✕</button>
               </div>
