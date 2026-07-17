@@ -10,14 +10,14 @@ function App() {
   const [nota, setNota] = useState({
     grandTotal: 0,
     diskon: 0,
-    pajak: 10,
+    pajak: 0,
     biayaLayanan: 0
   })
 
   const [teman, setTeman] = useState([])
 
   function resetData() {
-    setNota({ grandTotal: 0, diskon: 0, pajak: 10, biayaLayanan: 0 })
+    setNota({ grandTotal: 0, diskon: 0, pajak: 0, biayaLayanan: 0 })
     setTeman([])
   }
 

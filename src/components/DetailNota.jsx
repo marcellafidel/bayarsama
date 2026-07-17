@@ -1,4 +1,13 @@
 function DetailNota({ nota, setNota }) {
+  function handleChange(field, rawValue) {
+    // Biarkan kosong kalau user emang lagi hapus semua angka
+    if (rawValue === "") {
+      setNota({ ...nota, [field]: "" })
+      return
+    }
+    setNota({ ...nota, [field]: Number(rawValue) })
+  }
+
   return (
     <div className="card">
       <div className="card-header">
@@ -13,8 +22,8 @@ function DetailNota({ nota, setNota }) {
             <span>Rp</span>
             <input
               type="number"
-              value={nota.grandTotal}
-              onChange={(e) => setNota({ ...nota, grandTotal: Number(e.target.value) })}
+              value={nota.grandTotal === 0 ? "" : nota.grandTotal}
+              onChange={(e) => handleChange("grandTotal", e.target.value)}
               placeholder="0"
             />
           </div>
@@ -27,8 +36,8 @@ function DetailNota({ nota, setNota }) {
             <span>Rp</span>
             <input
               type="number"
-              value={nota.diskon}
-              onChange={(e) => setNota({ ...nota, diskon: Number(e.target.value) })}
+              value={nota.diskon === 0 ? "" : nota.diskon}
+              onChange={(e) => handleChange("diskon", e.target.value)}
               placeholder="0"
             />
           </div>
@@ -39,8 +48,8 @@ function DetailNota({ nota, setNota }) {
           <div className="input-suffix">
             <input
               type="number"
-              value={nota.pajak}
-              onChange={(e) => setNota({ ...nota, pajak: Number(e.target.value) })}
+              value={nota.pajak === 0 ? "" : nota.pajak}
+              onChange={(e) => handleChange("pajak", e.target.value)}
               placeholder="0"
             />
             <span>%</span>
@@ -52,8 +61,8 @@ function DetailNota({ nota, setNota }) {
           <div className="input-suffix">
             <input
               type="number"
-              value={nota.biayaLayanan}
-              onChange={(e) => setNota({ ...nota, biayaLayanan: Number(e.target.value) })}
+              value={nota.biayaLayanan === 0 ? "" : nota.biayaLayanan}
+              onChange={(e) => handleChange("biayaLayanan", e.target.value)}
               placeholder="0"
             />
             <span>%</span>
